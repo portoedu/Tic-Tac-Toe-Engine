@@ -4,12 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "move.h"
-
-#include "board.c"
-#include "eval.c"
-#include "minimax.c"
 
 void print_usage()
 {

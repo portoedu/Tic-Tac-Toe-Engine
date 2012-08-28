@@ -4,6 +4,9 @@
    the tic-tac-toe engine. No pruning or heuristic
    evaluation function is necessary for tic-tac-toe. */
 
+#include <stdlib.h>
+#include "move.h"
+
 int max(int a, int b)
 {
   if (a >= b) {
