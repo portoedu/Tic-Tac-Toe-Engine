@@ -50,7 +50,7 @@ int someone_wins(char **board, char letter)
   
   /* Handles someone winning on a column */
   int i;
-  int j = 0;
+  int j = -1;
   char column[3];
 
   while (j++ < 3) {
