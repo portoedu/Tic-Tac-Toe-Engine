@@ -8,14 +8,13 @@
 
 void print_usage()
 {
-  printf("Hi, welcome to tic-tac-toe as implemented by");
-  printf(" Steven Rand\non August 27 and 28 of 2012. You are 'O' and");
-  printf(" the computer is 'X.'\nTo play a move, please insert the");
-  printf(" row number in which you would like\nto play (1, 2 or 3");
-  printf(" where 1 is at the top of the board)");
-  printf(" followed by a\nspace and then the column number");
-  printf("(also 1, 2 or 3). You get to go first.\n");
-  printf("You will not be able to win, but good luck anyway!\n\n");
+  printf("Bem vindo ao Jogo da Velha!\nVocê joga com 'O' e");
+  printf(" o computador (eu) com 'X.'\nPara fazer uma jogada, insira");
+  printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
+  printf(" onde 1 é o topo do tabuleiro)");
+  printf(" seguido por\nespaço e o número da coluna");
+  printf("(também 1, 2 ou 3). Eu deixo você ir primeiro.\n");
+  printf("Você não tem nem chance de me vencer, mas boa sorte igual...\n\n");
 
   return;
 }
