@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "move.h"
+#include <time.h>
 
 void print_usage()
 {
@@ -22,15 +23,29 @@ void print_usage()
 /* Prints and exits if the game is a draw */
 void cats_game()
 {
-  printf("Cat's game. Thanks for playing.\n");\
+  printf("Conseguiu empatar, mas ganhar....NUNCA.\n");\
   exit(1);
 }
 
 /* Prints and exits if the computer wins */
 void ai_wins()
 {
-  printf("I win. Bow before your robot overlord.\n");
-  exit(1);
+  int v;
+	srand(time(NULL));
+	v = rand() %5 + 1;
+	
+	switch(v){
+	case 1: printf("Minha dica é: chore em posição fetal. Afinal, você não consegue ganhar de um monte de bits.\n");
+	break;
+	case 2: printf("Eu avisei que não tinha como ganhar, mas não, ninguém escuta o computador mesmo...\n");
+	break;
+	case 3: printf("E foi dessa maneira que o espertão perdeu pra um algoritmo de computador...NUM JOGO DA VELHA.\n");
+	break;
+	case 4: printf("Vai tentando, vai que alguma hora...Não, não tem como mesmo.\n");
+	break;
+	default: printf("Nunca ganharam de mim, e mesmo assim insistem em ficar tentando...\n");}
+
+  exit(v);
 }
 
 int main()
