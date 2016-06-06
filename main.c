@@ -47,7 +47,6 @@ int main()
      initializing the board */
   print_usage();
   init_board(board);
-  
   /* Play the game */
   int hor, vert, alpha;
   move best_move = (move) malloc (sizeof(struct legal_move));
