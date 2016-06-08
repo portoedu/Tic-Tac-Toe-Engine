@@ -87,7 +87,10 @@ int main()
     print_board(board);
 
     while (!game_over(board) && (!someone_wins(board, 'X'))) {
-        scanf("%d %d", &hor, &vert);
+		printf("Digite a linha:    ");
+        scanf("%d", &hor);
+		printf("Digite a coluna:   ");
+		scanf("%d", &vert);
         hor -= 1; // adjust input values to match array indeces
         vert -= 1;
         if ((hor > 2) || (vert > 2) || (hor < 0) || (vert < 0)) {
