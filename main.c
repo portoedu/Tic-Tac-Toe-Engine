@@ -10,6 +10,7 @@
 void print_usage()
 {
 
+
     printf("Bem vindo ao Jogo da Velha!\nVocê joga com 'O' e");
     printf(" o computador (eu) com 'X'\nPara fazer uma jogada, insira");
     printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
@@ -27,6 +28,7 @@ void print_usage()
 void cats_game()
 {
 
+
   int v;
 	srand(time(NULL));
 	v = rand() %3 + 1;
@@ -39,6 +41,7 @@ void cats_game()
 	default: printf("É...foi um empate, quem sabe você não tenta jogar truco?\n");}
 
   exit(v);
+
 }
 
 /* Prints and exits if the computer wins */
@@ -88,10 +91,9 @@ int main()
         hor -= 1; // adjust input values to match array indeces
         vert -= 1;
         if ((hor > 2) || (vert > 2) || (hor < 0) || (vert < 0)) {
-            system("clear");
+            
             printf("Sorry, that square does not exist.\n");
         } else if (board[hor][vert] != '-') {
-            system("clear");
             printf("Sorry, that square is already occupied.\n");
         } else {
             system("clear");
