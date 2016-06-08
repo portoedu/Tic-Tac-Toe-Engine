@@ -52,4 +52,3 @@ void print_board(char **board)
   putchar ('\n');
   return;
 }
-

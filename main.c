@@ -9,16 +9,8 @@
 void print_usage()
 {
 
-    printf("Bem vindo ao Jogo da Velha!\nVocê joga com 'O' e");
-    printf(" o computador (eu) com 'X'\nPara fazer uma jogada, insira");
-    printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
-    printf(" onde 1 é o topo do tabuleiro)");
-    printf(" seguido por\nespaço e o número da coluna");
-    printf("(também 1, 2 ou 3). Eu deixo você ir primeiro.\n");
-    printf("Você não tem nem chance de me vencer, mas boa sorte igual...\n\n");
-
   printf("Bem vindo ao Jogo da Velha!\nVocê joga com 'O' e");
-  printf(" o computador (eu) com 'X.'\nPara fazer uma jogada, insira");
+  printf(" o computador (eu) com 'X'\nPara fazer uma jogada, insira");
   printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
   printf(" onde 1 é o topo do tabuleiro)");
   printf(" seguido por\nespaço e o número da coluna");
@@ -33,7 +25,6 @@ void print_usage()
 void cats_game()
 {
     printf("Cat's game. Thanks for playing.\n");
-    \
     exit(1);
 }
 
