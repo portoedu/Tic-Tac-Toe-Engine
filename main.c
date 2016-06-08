@@ -95,17 +95,17 @@ int main()
         vert -= 1;
         if ((hor > 2) || (vert > 2) || (hor < 0) || (vert < 0)) {
             
-            printf("Sorry, that square does not exist.\n");
+            printf("Ops, este lugar não existe.\n");
         } else if (board[hor][vert] != '-') {
-            printf("Sorry, that square is already occupied.\n");
+            printf("Opa, este lugar na está ocupado!\n");
         } else {
             system("clear");
             update_board(board, hor, vert, 0);
-            printf("The position after your last move:\n");
+            printf("A posição depois de sua última jogada:\n");
             print_board(board);
             alpha = minimax(board, 1, best_move);
             update_board(board, best_move -> hor, best_move -> vert, 1);
-            printf("The position after the computer's last move:\n");
+            printf("A posição depois da última jogada do computador:\n");
             print_board(board);
         }
     }
