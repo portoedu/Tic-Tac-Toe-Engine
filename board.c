@@ -1,15 +1,21 @@
+/* Eduardo Porto e Matheus Balke */
+/* Pontifícia Universidade Católica do Rio Grande do Sul */
+/* Junho de 2016 */
+/* eduardo.porto@acad.pucrs.br e matheus.balke@acad.pucrs.br */
+/* Trabalho final de Laboratório de Programação */
+
 #include <stdio.h>
-/* Steven Rand */
-/* August 27, 2012 */
 
-/* Some useful functions on a tic-tac-toe board
-   represented as a 2-D array: initialize an empty board,
-   update the board appropriately after a move and
-   print the board. */
 
-/* Sets all squares on the board to '-', 
-   meaning empty. For use at the beginning 
-   of each new game. */
+
+/* Funções essenciais para a representação 2D do Jogo da velha :
+ inicializar um tabuleiro vazio, atualizar o tabuleiro apropriadamente 
+ após a jogada e printar o tabuleiro */
+
+
+/* Faz com que todos os espaços preenchidos com '-' 
+ signifiquem vazio. Para uso no início de cada jogo */
+
 void init_board(char **board)
 {
  	int i, j;
@@ -22,23 +28,24 @@ void init_board(char **board)
   return;
 }
 
-/* Places an 'X' or an 'O' on the indicated square.
-   If player is non-zero then the computer moves and 
-   places an 'X'. If player equals zero then user 
-   moves and places an 'O'. */
+/* Aloca um 'X' ou um 'O' no espaço indicado.
+ Se o jogador não for zero o computador se move e
+ coloca um 'X'. Se o jogador for 0 então o utilizador s
+ e move e coloca um 'O' */
+
 void update_board(char **board, int hor, int vert, int player)
 {
-  if (player) { // Computer's move
+  if (player) { // Jogada do computador
     board[hor][vert] = 'X';
-  } else {      // User's move
+  } else {      // Jogada do utilizador
     board[hor][vert] = 'O';
   }
 
   return;
 }
 
-/* Shows the board as a 3 x 3 grid with
-   'X's and 'O's placed appropriately */
+/* Mostra a grade 3 x 3 com 'X's e 'O's alocados apropriadamente */
+
 void print_board(char **board)
 {
  	  printf("\t%2c |%2c |%2c \n", board[0][0], board[0][1], board[0][2]);
