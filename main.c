@@ -76,9 +76,9 @@ void ai_wins()
 	case 4: printf("Vai tentando, vai que alguma hora...Não, não tem como mesmo.\n");
 	break;
 	default: printf("Nunca ganharam de mim, e mesmo assim insistem em ficar tentando...\n");}
-
-  exit(v);
-
+	getchar();
+	getchar();
+ 
 }
 
 void cabecario(){
@@ -185,11 +185,14 @@ void umjogador(char **board){
 int main()
 {
     /* Set up global variables: board and best move */
-    int i, caso;
+    int i, caso, exit=0;
     char **board = (char **) malloc (sizeof(char *) * 3);
     for (i=0; i<3; i++) {
         board[i] = (char *) malloc (sizeof(char) * 3);
     }
+
+    
+	while (exit != 3){
 	cabecario();
     /* Begin the game by printing usage instructions and
        initializing the board */
@@ -200,6 +203,7 @@ int main()
 	printf("\t\t\t\t\t\t Escolha uma opção de jogo: \n");
 	printf("\t\t\t\t\t\t |1- Um jogador\n");
 	printf("\t\t\t\t\t\t |2- Dois jogadores\n");
+	printf("\t\t\t\t\t\t |3- Sair\n");	
 	scanf("%d", &caso);
 	switch(caso){
     case 1:
@@ -208,9 +212,14 @@ int main()
 	case 2:
 			doisjogadores(board);
 			break;
-	default: printf("Inválido"); 
+	case 3:	
+			exit = 3;
+			break;	
+	default: 
+			printf("Inválido"); 
+			break;
 	}
-
+	}
 
     return 0; // control should never reach here
 }
