@@ -41,11 +41,11 @@ void update_board(char **board, int hor, int vert, int player)
    'X's and 'O's placed appropriately */
 void print_board(char **board)
 {
- 	  printf("%2c |%2c |%2c \n", board[0][0], board[0][1], board[0][2]);
-      printf("---+---+---\n");
-      printf("%2c |%2c |%2c \n", board[1][0], board[1][1], board[1][2]);
-      printf("---+---+---\n");
-      printf("%2c |%2c |%2c \n", board[2][0], board[2][1], board[2][2]);
+ 	  printf("\t%2c |%2c |%2c \n", board[0][0], board[0][1], board[0][2]);
+      printf("\t---+---+---\n");
+      printf("\t%2c |%2c |%2c \n", board[1][0], board[1][1], board[1][2]);
+      printf("\t---+---+---\n");
+      printf("\t%2c |%2c |%2c \n", board[2][0], board[2][1], board[2][2]);
   putchar ('\n');
   return;
 }
