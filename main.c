@@ -7,17 +7,17 @@
 #include "move.h"
 #include <time.h>
 
-void print_usage()
+void print_usage1()
 {
 	system("clear");
-
-    printf("Então isto é um desafio? Eu contra você?!\nVocê joga com 'O' e");
-    printf(" eu jogarei com 'X'\nPara fazer uma jogada, insira");
-    printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
+	putchar ('\n');
+    printf("\t\tEntão isto é um desafio? Eu contra você?!\n\t\tVocê joga com 'O' e");
+    printf(" eu jogarei com 'X'\n\t\tPara fazer uma jogada, insira");
+    printf(" o número da linha que gostaria\n\t\tde jogar (1, 2 ou 3");
     printf(" onde 1 é o topo do tabuleiro)");
-    printf(" em seguida tecle 'ENTER'\ne então o número da coluna");
+    printf(" em seguida tecle 'ENTER'\n\t\te então o número da coluna");
     printf("(também 1, 2 ou 3). Eu deixo você ir primeiro.\n");
-    printf("Você não tem nem chance de me vencer, mas boa sorte igual...\n\n");
+    printf("\t\tVocê não tem nem chance de me vencer, mas boa sorte igual...\n\n");
 
 
 
@@ -79,14 +79,8 @@ printf("\t\t      ╚█████╔╝╚██████╔╝╚██�
 printf("\t\t       ╚════╝  ╚═════╝  ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝  ╚═╝      ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝  \n\n\n");
 }
 
-void umjogador(char **board){
-	system("clear");
-	print_usage();
-    int hor, vert, alpha;
-    move best_move = (move) malloc (sizeof(struct legal_move));
-	 print_board(board);
-
-	while (!game_over(board) && (!someone_wins(board, 'X'))) {
+int jogada(char** board, char a){
+		int hor, vert;
 		printf("Digite a linha: ");
         scanf("%i", &hor);
 		hor -= 1;
@@ -101,24 +95,77 @@ void umjogador(char **board){
 		    } else if (board[hor][vert] != '-') {
 		        printf("Opa, este lugar já está ocupado!\n");
 		    } else {
+				update_board(board, hor, vert, a);
+				return 1;
+			}
+		}
+	return 0;
+	
+}
+
+
+void umjogador(char **board){
+	system("clear");
+	print_usage1();
+    int hor, vert, alpha;
+    move best_move = (move) malloc (sizeof(struct legal_move));
+	 print_board(board);
+
+	while (!game_over(board) && (!someone_wins(board, 'X'))) {
+				if (jogada(board,0)){
 		        system("clear");
-		        update_board(board, hor, vert, 0);
 		        printf("A posição depois de sua última jogada:\n");
 		        print_board(board);
 		        alpha = minimax(board, 1, best_move);
 		        update_board(board, best_move -> hor, best_move -> vert, 1);
 		        printf("A posição depois da última jogada do computador:\n");
 		        print_board(board);
-		    }
-		} 
-    }
+		}		    
+	}
+		
+    
 	if (someone_wins(board, 'X')) {
         ai_wins();
     } else {
         cats_game();
     }
 }
+	void doisjogadores(char **board){
+		system("clear");
+		print_board(board);
+			while ((!game_over(board) && (!someone_wins(board, 'O')))) {
+				while(1){				
+				printf("\n\t\t\tVez de jogador 1:\n");	
+				if (jogada(board,'X')){
+					break;
+						//print_board(board)
+				}
+				}
+				if(game_over(board) || someone_wins(board, 'X'))
+					break;		
+					system("clear");	
+				print_board(board);
+				
+				while (1){	
+					printf("\n\t\t\tVez de jogador 2:\n");	
+				if(jogada(board,0)){
+					break;
+				}
+			}
+				system("clear");
+				print_board(board);
+			}
+	
+	print_board(board);
+	if (someone_wins(board, 'X')) {
+        printf("Jogador 1 ganhou!\n");
+    } else
+		if (someone_wins(board, 'O'))  {
+     	printf("Jogador 2 ganhou!\n");
+    }else 
+	printf("Que pena, foi um empate!\n");
 
+	}
 
 int main()
 {
@@ -145,7 +192,7 @@ int main()
 		  	umjogador(board);
 			break;
 	case 2:
-			
+			doisjogadores(board);
 			break;
 	default: printf("Inválido"); 
 	}
