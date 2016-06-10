@@ -11,19 +11,33 @@ void print_usage1()
 {
 	system("clear");
 	putchar ('\n');
-    printf("\t\tEntão isto é um desafio? Eu contra você?!\n\t\tVocê joga com 'O' e");
-    printf(" eu jogarei com 'X'\n\t\tPara fazer uma jogada, insira");
-    printf(" o número da linha que gostaria\n\t\tde jogar (1, 2 ou 3");
-    printf(" onde 1 é o topo do tabuleiro)");
-    printf(" em seguida tecle 'ENTER'\n\t\te então o número da coluna");
-    printf("(também 1, 2 ou 3). Eu deixo você ir primeiro.\n");
-    printf("\t\tVocê não tem nem chance de me vencer, mas boa sorte igual...\n\n");
-
+    printf("\t\t\t\t████████████████████████████████████████████████████████████████████████\n");
+ 	printf("\t\t\t\t██                                                                    ██\n");
+ 	printf("\t\t\t\t██   Então isto é um desafio? Eu contra você?! Você joga com 'O' e    ██\n");
+ 	printf("\t\t\t\t██   eu jogarei com 'X'. Para fazer uma jogada, insira                ██\n"); 
+ 	printf("\t\t\t\t██   o número da linha que gostaria de jogar (1, 2 ou 3               ██\n");
+ 	printf("\t\t\t\t██   onde 1 é o topo do tabuleiro)                                    ██\n");
+ 	printf("\t\t\t\t██   em seguida tecle 'ENTER' e então o número da coluna              ██\n");
+ 	printf("\t\t\t\t██   (também 1, 2 ou 3). Eu deixo você ir primeiro.                   ██\n");
+	printf("\t\t\t\t██   Você não tem nem chance de me vencer, mas boa sorte igual...     ██\n");
+	printf("\t\t\t\t██                                                                    ██\n");
+	printf("\t\t\t\t████████████████████████████████████████████████████████████████████████\n");
 
 
     return;
 }
-
+void print_usage2(){
+	system("clear");
+	putchar ('\n');
+ printf("\t\t\t\t██████████████████████████████████████████████████████████████████████████████████████████\n");
+ printf("\t\t\t\t██                                                                                      ██\n");
+ printf("\t\t\t\t██    O Jogador 1 joga com 'X' e o Jogador 2 joga com 'O'.                              ██\n");
+ printf("\t\t\t\t██   Para jogar, insira o número da linha (1, 2 ou 3, onde 1 é o topo do tabuleiro)     ██\n");
+ printf("\t\t\t\t██    seguido por 'ENTER' e então o número da coluna (1, 2 ou 3 também).                ██\n");
+ printf("\t\t\t\t██                                                                                      ██\n");
+ printf("\t\t\t\t██████████████████████████████████████████████████████████████████████████████████████████\n");
+ return;
+}
 /* Prints and exits if the game is a draw */
 void cats_game()
 {
@@ -132,6 +146,7 @@ void umjogador(char **board){
 }
 	void doisjogadores(char **board){
 		system("clear");
+		print_usage2();
 		print_board(board);
 			while ((!game_over(board) && (!someone_wins(board, 'O')))) {
 				while(1){				
@@ -158,12 +173,12 @@ void umjogador(char **board){
 	
 	print_board(board);
 	if (someone_wins(board, 'X')) {
-        printf("Jogador 1 ganhou!\n");
+        printf("\tJogador 1 ganhou!\n");
     } else
 		if (someone_wins(board, 'O'))  {
-     	printf("Jogador 2 ganhou!\n");
+     	printf("\tJogador 2 ganhou!\n");
     }else 
-	printf("Que pena, foi um empate!\n");
+	printf("\tFoi um empate!\n");
 
 	}
 
