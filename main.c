@@ -9,13 +9,13 @@
 
 void print_usage()
 {
-
+	system("clear");
 
     printf("Bem vindo ao Jogo da Velha!\nVocê joga com 'O' e");
     printf(" o computador (eu) com 'X'\nPara fazer uma jogada, insira");
     printf(" o número da linha que gostaria\nde jogar (1, 2 ou 3");
     printf(" onde 1 é o topo do tabuleiro)");
-    printf(" seguido por\nespaço e o número da coluna");
+    printf(" em seguida tecle 'ENTER'\ne então o número da coluna");
     printf("(também 1, 2 ou 3). Eu deixo você ir primeiro.\n");
     printf("Você não tem nem chance de me vencer, mas boa sorte igual...\n\n");
 
@@ -53,7 +53,7 @@ void ai_wins()
 	v = rand() %5 + 1;
 	
 	switch(v){
-	case 1: printf("Minha dica é: chore em posição fetal. Afinal, você não consegue ganhar de um monte de bits.\n");
+	case 1: printf("Minha dica é: parar de tentar. Afinal, você não consegue ganhar de um monte de bits.\n");
 	break;
 	case 2: printf("Eu avisei que não tinha como ganhar, mas não, ninguém escuta o computador mesmo...\n");
 	break;
@@ -87,17 +87,17 @@ int main()
     print_board(board);
 
     while (!game_over(board) && (!someone_wins(board, 'X'))) {
-		printf("Digite a linha:    ");
-        scanf("%d", &hor);
-		printf("Digite a coluna:   ");
-		scanf("%d", &vert);
+		printf("Digite a linha: ");
+        scanf("%i", &hor);
+		printf("Digite a coluna: ");
+		scanf("%i", &vert);
         hor -= 1; // adjust input values to match array indeces
         vert -= 1;
-        if ((hor > 2) || (vert > 2) || (hor < 0) || (vert < 0)) {
+        if ((hor > 2) || (vert > 2) || (hor < 0) || (vert < 0)){
             
-            printf("Ops, este lugar não existe.\n");
+            printf("\nOps, este lugar não existe.\n");
         } else if (board[hor][vert] != '-') {
-            printf("Opa, este lugar na está ocupado!\n");
+            printf("\nOpa, este lugar já está ocupado!\n");
         } else {
             system("clear");
             update_board(board, hor, vert, 0);
