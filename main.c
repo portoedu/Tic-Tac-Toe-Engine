@@ -1,6 +1,8 @@
-/* Steven Rand */
-/* August 27, 2012 */
-/* Main function for tic-tac-toe engine */
+/* Eduardo Porto e Matheus Balke */
+/* Pontifícia Universidade Católica do Rio Grande do Sul */
+/* Junho de 2016 */
+/* eduardo.porto@acad.pucrs.br e matheus.balke@acad.pucrs.br */
+/* Trabalho final de Laboratório de Programação */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -38,7 +40,7 @@ void print_usage2(){
  printf("\t\t\t\t  ╚════════════════════════════════════════════════════════════════════════════════════╝ \n");
  return;
 }
-/* Prints and exits if the game is a draw */
+/* Printa e sai se o jogo der empate */
 void cats_game()
 {
 
@@ -58,7 +60,7 @@ void cats_game()
 
 }
 
-/* Prints and exits if the computer wins */
+/* Printa e sai se o computador ganhar */
 void ai_wins()
 {
 
@@ -184,18 +186,17 @@ void umjogador(char **board){
 
 int main()
 {
-    /* Set up global variables: board and best move */
+    /* Gera variáveis globais : board e melhor jogada */
     int i, caso;
     char **board = (char **) malloc (sizeof(char *) * 3);
     for (i=0; i<3; i++) {
         board[i] = (char *) malloc (sizeof(char) * 3);
     }
 	cabecario();
-    /* Begin the game by printing usage instructions and
-       initializing the board */
+   /* Inicia o jogo printando as instruções de uso e inicializando o tabuleiro */
     
     init_board(board);
-    /* Play the game */
+    /* Joga o jogo */
 
 	printf("\t\t\t\t\t\t Escolha uma opção de jogo: \n");
 	printf("\t\t\t\t\t\t |1- Um jogador\n");
@@ -212,7 +213,7 @@ int main()
 	}
 
 
-    return 0; // control should never reach here
+    return 0; // Controle nunca deve chegar aqui
 }
 
 
