@@ -11,17 +11,17 @@ void print_usage1()
 {
 	system("clear");
 	putchar ('\n');
-    printf("\t\t\t\t████████████████████████████████████████████████████████████████████████\n");
- 	printf("\t\t\t\t██                                                                    ██\n");
- 	printf("\t\t\t\t██   Então isto é um desafio? Eu contra você?! Você joga com 'O' e    ██\n");
- 	printf("\t\t\t\t██   eu jogarei com 'X'. Para fazer uma jogada, insira                ██\n"); 
- 	printf("\t\t\t\t██   o número da linha que gostaria de jogar (1, 2 ou 3               ██\n");
- 	printf("\t\t\t\t██   onde 1 é o topo do tabuleiro)                                    ██\n");
- 	printf("\t\t\t\t██   em seguida tecle 'ENTER' e então o número da coluna              ██\n");
- 	printf("\t\t\t\t██   (também 1, 2 ou 3). Eu deixo você ir primeiro.                   ██\n");
-	printf("\t\t\t\t██   Você não tem nem chance de me vencer, mas boa sorte igual...     ██\n");
-	printf("\t\t\t\t██                                                                    ██\n");
-	printf("\t\t\t\t████████████████████████████████████████████████████████████████████████\n");
+    printf("\t\t\t\t\t ╔══════════════════════════════════════════════════════════════════╗ \n");
+ printf("\t\t\t\t\t╔╝                                                                  ╚╗\n");
+ printf("\t\t\t\t\t║   Então isto é um desafio? Eu contra você?! Você joga com 'O' e    ║\n");
+ printf("\t\t\t\t\t║   eu jogarei com 'X'. Para fazer uma jogada, insira                ║\n"); 
+ printf("\t\t\t\t\t║   o número da linha que gostaria de jogar (1, 2 ou 3               ║\n");
+ printf("\t\t\t\t\t║   onde 1 é o topo do tabuleiro)                                    ║\n");
+ printf("\t\t\t\t\t║   em seguida tecle 'ENTER' e então o número da coluna              ║\n");
+ printf("\t\t\t\t\t║   (também 1, 2 ou 3). Eu deixo você ir primeiro.                   ║\n");
+ printf("\t\t\t\t\t║   Você não tem nem chance de me vencer, mas boa sorte igual...     ║\n");
+ printf("\t\t\t\t\t╚╗                                                                  ╔╝\n");
+ printf("\t\t\t\t\t ╚══════════════════════════════════════════════════════════════════╝ \n");
 
 
     return;
@@ -29,13 +29,13 @@ void print_usage1()
 void print_usage2(){
 	system("clear");
 	putchar ('\n');
- printf("\t\t\t\t██████████████████████████████████████████████████████████████████████████████████████████\n");
- printf("\t\t\t\t██                                                                                      ██\n");
- printf("\t\t\t\t██    O Jogador 1 joga com 'X' e o Jogador 2 joga com 'O'.                              ██\n");
- printf("\t\t\t\t██   Para jogar, insira o número da linha (1, 2 ou 3, onde 1 é o topo do tabuleiro)     ██\n");
- printf("\t\t\t\t██    seguido por 'ENTER' e então o número da coluna (1, 2 ou 3 também).                ██\n");
- printf("\t\t\t\t██                                                                                      ██\n");
- printf("\t\t\t\t██████████████████████████████████████████████████████████████████████████████████████████\n");
+ printf("\t\t\t\t  ╔════════════════════════════════════════════════════════════════════════════════════╗ \n");
+ printf("\t\t\t\t ╔╝                                                                                    ╚╗\n");
+ printf("\t\t\t\t ║    O Jogador 1 joga com 'X' e o Jogador 2 joga com 'O'.                              ║\n");
+ printf("\t\t\t\t ║   Para jogar, insira o número da linha (1, 2 ou 3, onde 1 é o topo do tabuleiro)     ║\n");
+ printf("\t\t\t\t ║    seguido por 'ENTER' e então o número da coluna (1, 2 ou 3 também).                ║\n");
+ printf("\t\t\t\t ╚╗                                                                                    ╔╝\n");
+ printf("\t\t\t\t  ╚════════════════════════════════════════════════════════════════════════════════════╝ \n");
  return;
 }
 /* Prints and exits if the game is a draw */
@@ -190,7 +190,6 @@ int main()
     for (i=0; i<3; i++) {
         board[i] = (char *) malloc (sizeof(char) * 3);
     }
-	
 	cabecario();
     /* Begin the game by printing usage instructions and
        initializing the board */
