@@ -4,10 +4,24 @@
 /* eduardo.porto@acad.pucrs.br e matheus.balke@acad.pucrs.br */
 /* Trabalho final de Laboratório de Programação */
 
+//Este programa deve ser aberto em Full-Screen
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "move.h"
 #include <time.h>
+
+int letrapranum(char a){
+int b=0;
+switch (a){
+case '1': b = 1; break;
+case '2': b = 2; break;
+case '3': b = 3; break;
+default: printf("Inválido");
+}
+return b;
+}
+
 
 void print_usage1()
 {
@@ -233,6 +247,7 @@ int main()
     /* Gera variáveis globais : board e melhor jogada */
 
     int i, caso, exit=0;
+	char num;
 
     char **board = (char **) malloc (sizeof(char *) * 3);
     for (i=0; i<3; i++) {
@@ -251,7 +266,8 @@ int main()
 	printf("\t\t\t\t\t\t |1- Um jogador\n");
 	printf("\t\t\t\t\t\t |2- Dois jogadores\n");
 	printf("\t\t\t\t\t\t |3- Sair\n");	
-	scanf("%d", &caso);
+	scanf("%c", &num);
+	caso= letrapranum(num);
 	switch(caso){
     case 1:
 		  	umjogador(board);
@@ -262,9 +278,6 @@ int main()
 	case 3:	
 			exit = 3;
 			break;	
-	default: 
-			printf("Inválido"); 
-			break;
 	}
 	}
 
