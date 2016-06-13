@@ -55,8 +55,8 @@ void cats_game()
 	case 2: printf("Ganhei? Não? Ah...empatei.\n");
 	break;
 	default: printf("É...foi um empate, quem sabe você não tenta jogar truco?\n");}
-
-  exit(v);
+	getchar();
+	getchar();
 
 }
 
@@ -172,15 +172,20 @@ void umjogador(char **board){
 				system("clear");
 				print_board(board);
 			}
-	
+	system("clear");
 	print_board(board);
 	if (someone_wins(board, 'X')) {
-        printf("\tJogador 1 ganhou!\n");
+        printf("\t\t\t\t\t\t\t\tJogador 1 ganhou!\n");
+	getchar();
+
     } else
 		if (someone_wins(board, 'O'))  {
-     	printf("\tJogador 2 ganhou!\n");
+     	printf("\t\t\t\t\t\t\t\tJogador 2 ganhou!\n");
+	getchar();
+
     }else 
-	printf("\tFoi um empate!\n");
+	printf("\t\t\t\t\t\t\t\tFoi um empate!\n");
+	getchar();
 
 	}
 
