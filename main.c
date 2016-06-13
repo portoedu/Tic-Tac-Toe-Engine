@@ -55,6 +55,16 @@ void cats_game()
 	case 2: printf("Ganhei? Não? Ah...empatei.\n");
 	break;
 	default: printf("É...foi um empate, quem sabe você não tenta jogar truco?\n");}
+
+	printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+	printf("\t\t\t\t\t\t\t              ║           ║\n");
+	printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+	printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n"); 
+	printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║        ║\n");
+	printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+
 	getchar();
 	getchar();
 
@@ -78,7 +88,19 @@ void ai_wins()
 	case 4: printf("Vai tentando, vai que alguma hora...Não, não tem como mesmo.\n");
 	break;
 	default: printf("Nunca ganharam de mim, e mesmo assim insistem em ficar tentando...\n");}
-	getchar();
+
+
+	printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+	printf("\t\t\t\t\t\t\t              ║           ║\n");
+	printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+	printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n"); 
+	printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║        ║\n");
+	printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+
+
+    getchar();
 	getchar();
  
 }
@@ -176,15 +198,31 @@ void umjogador(char **board){
 	print_board(board);
 	if (someone_wins(board, 'X')) {
         printf("\t\t\t\t\t\t\t\tJogador 1 ganhou!\n");
+
+
+
 	getchar();
 
     } else
 		if (someone_wins(board, 'O'))  {
      	printf("\t\t\t\t\t\t\t\tJogador 2 ganhou!\n");
+
+
+
 	getchar();
 
     }else 
 	printf("\t\t\t\t\t\t\t\tFoi um empate!\n");
+
+	printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+	printf("\t\t\t\t\t\t\t              ║           ║\n");
+	printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+	printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n"); 
+	printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+	printf("\t\t\t\t\t\t\t                 ║        ║\n");
+	printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+
 	getchar();
 
 	}
