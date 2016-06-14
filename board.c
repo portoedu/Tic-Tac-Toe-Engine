@@ -48,7 +48,7 @@ void update_board(char **board, int hor, int vert, int player)
 
 void print_board(char **board)
 {
-    printf("\t\t\t\t\t\t\t\t ╔═════════════╗\n");
+    printf("\n\t\t\t\t\t\t\t\t ╔═════════════╗\n");
     printf("\t\t\t\t\t\t\t\t╔╝             ╚╗   \n");
     printf("\t\t\t\t\t\t\t\t║  %2c |%2c |%2c   ║ \n", board[0][0], board[0][1], board[0][2]);
     printf("\t\t\t\t\t\t\t\t║  ---+---+---  ║\n");
