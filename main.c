@@ -11,20 +11,15 @@
 #include <stdio.h>
 #include "move.h"
 #include <time.h>
-void ultimos(char** board){
+
+void ultimos(char** board, int a){
 
 FILE* arquivo;
 char c [51];
 
-
 arquivo = fopen("arq.txt", "w+");
-printf("digite o nome do vencedor: ");
+printf("Jogador %i, digite seu nome: ", a);
 scanf(" %s", c);
-
-
-
-
-
 
 fprintf(arquivo,"O(a) jogador(a) %s ganhou com a seguinte jogada:\n", c);
 fprintf(arquivo,"\t\t\t ╔═════════════╗                                                    \n");
@@ -37,12 +32,7 @@ fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[2][0], board[
 fprintf(arquivo,"\t\t\t╚╗             ╔╝                                                   \n");
 fprintf(arquivo,"\t\t\t ╚═════════════╝                                                    \n");
 
-
-
-
 fclose(arquivo);
-
-
 
 }
 
@@ -271,16 +261,32 @@ void doisjogadores(char **board) {
     if (someone_wins(board, 'X')) {
         printf("\t\t\t\t\t\t\t\tJogador 1 ganhou!\n");
 
+printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+    printf("\t\t\t\t\t\t\t              ║           ║\n");
+    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
+    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║        ║\n");
+    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
 
         getchar();
-
+		ultimos(board, 1);
     } else if (someone_wins(board, 'O'))  {
         printf("\t\t\t\t\t\t\t\tJogador 2 ganhou!\n");
 
+printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+    printf("\t\t\t\t\t\t\t              ║           ║\n");
+    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
+    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║        ║\n");
+    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
 
 
         getchar();
-
+		ultimos(board, 2);
     } else
         printf("\t\t\t\t\t\t\t\tFoi um empate!\n");
 
@@ -295,7 +301,7 @@ void doisjogadores(char **board) {
 
     getchar();
 
-	ultimos(board);
+	
 
 }
 
