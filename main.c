@@ -46,10 +46,21 @@ printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════
 }
 
 void credit(){
-	
 
+system("clear");
+printf("\t\t\t\t\t**CRÉDITOS**\n");
+printf("\n\n\tEstrutura Original: sjrand (GitHub: https://github.com/sjrand)\n");
+printf("\tOtimização e modularização: Eduardo Porto e Matheus Balke\n");
+printf("\tDesenvolvido na Pontifícia Universidade do Rio Grande do Sul\n");
+printf("\tSob maestria de Marco Mangan\n");
+printf("\tFinalizado em Junho de 2016\n");
+printf("\n\tPRESSIONE ENTER PARA CONTINUAR\n");
+getchar();
+getchar();
 
 }
+	
+
 
  void leiaarq(){
 	char n;
