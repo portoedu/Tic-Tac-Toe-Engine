@@ -15,9 +15,11 @@
 void ultimos(char** board, int a){
 FILE* arquivo;
 char c [51];
-arquivo = fopen("ganhadores.txt", "w+");
+
+arquivo = fopen("ganhadores.txt", "a");
 printf("Jogador %i, digite seu nome: ", a);
 scanf(" %s", c);
+
 fprintf(arquivo,"O(a) jogador(a) %s ganhou com a seguinte jogada:\n", c);
 fprintf(arquivo,"\t\t\t ╔═════════════╗                                                    \n");
 fprintf(arquivo,"\t\t\t╔╝             ╚╗                                                   \n");
@@ -54,14 +56,13 @@ void credit(){
 	FILE *arquivo;
 	system("clear");
 	arquivo = fopen("ganhadores.txt", "r");
-	while ( ! feof(arquivo)) {
-
-		if (fscanf(arquivo, "%c", &n) == 1){
+	while (!feof(arquivo)) {
+		fscanf(arquivo, "%c", &n);
 		printf("%c", n);
-		}
+		
 	}
 	fclose(arquivo);
-	printf("\n\nPRESSIONE ENTER PARA CONTINUAR");
+	printf("\n\nPRESSIONE ENTER PARA CONTINUAR\n");
 	getchar();
 	getchar();
 }
@@ -84,6 +85,7 @@ int letrapranum(char a) {
 	break;
 	case '5':
 	b = 5;
+	break;
     default:
         b =0;
     }
@@ -356,6 +358,7 @@ int main()
             credit();
             break;
 	case 5:
+			system("clear");
 			exit = 5;
 			break;
         default:
