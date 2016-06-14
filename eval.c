@@ -1,81 +1,83 @@
-/* Steven Rand */
-/* August 27, 2012 */
-/* Evaluation functions for tic-tac-toe engine:
-   determine whether or not all squares are occupied,
-   determine whether or not the given player has won */
+/* Eduardo Porto e Matheus Balke */
+/* Pontifícia Universidade Católica do Rio Grande do Sul */
+/* Junho de 2016 */
+/* eduardo.porto@acad.pucrs.br e matheus.balke@acad.pucrs.br */
+/* Trabalho final de Laboratório de Programação */
 
-/* Returns non-zero if all squares are occupied, i.e.,
-   the game has ended. Makes no determination on result. */
+/*Funções evaluation do jogo da velha:
+	determina caso todos os espaços estão ocupados,
+	determina caso algum jogador ganhou*/
+
+/* Retorna 1 se todos os espaços estão ocupados, então o
+jogo terminou. */
 int game_over(char **board)
 {
-  int i, j;
+    int i, j;
 
-  for (i=0; i<3; i++) {
-    for (j=0; j<3; j++) {
-      if (board[i][j] == '-') { // an empty square exists
-	return 0;
-      }
+    for (i=0; i<3; i++) {
+        for (j=0; j<3; j++) {
+            if (board[i][j] == '-') { // Um espaço vazio existe.
+                return 0;
+            }
+        }
     }
-  }
 
-  return 1;
+    return 1;
 }
+/* Função que ajudar a função someone_wins: checa para ver se todos três elementos
+de uma lista são as letras dadas. */
 
-/* Helper function for someone_wins function below: checks
-   to see if all three elements of an array are the given
-   letter */
 int same_letter(char *line, char letter)
 {
-  int i;
+    int i;
 
-  for (i=0; i<3; i++) {
-    if (line[i] != letter) {
-      return 0;
+    for (i=0; i<3; i++) {
+        if (line[i] != letter) {
+            return 0;
+        }
     }
-  }
-  
-  return 1;
+
+    return 1;
 }
 
-/* Determines whether or not there has been a result:
-   positive if the given letter appears thrice in a line
-   and zero if not. */
+/* Retornar positivo se uma letra aparecer três vezes em uma linha
+   e zero caso não. */
 int someone_wins(char **board, char letter)
 {
-  /* Handles someone winning on a row */
-  if ((same_letter(board[0], letter)) || (same_letter(board[1], letter))
-      || (same_letter(board[2], letter))) {
-    return 1;
-  }
-  
-  /* Handles someone winning on a column */
-  int i;
-  int j = -1;
-  char column[3];
-
-  while (j++ < 3) {
-    for (i=0; i<3; i++) {
-      column[i] = board[i][j];
+    /* Lidar com alguém ganhando em uma linha */
+    if ((same_letter(board[0], letter)) || (same_letter(board[1], letter))
+            || (same_letter(board[2], letter))) {
+        return 1;
     }
-    if (same_letter(column, letter)) {
-      return 1;
-    } 
-  }
 
- /* Handles someone winning on a diagonal
-    using brute force method */
-  if (((board[0][0] == letter) && (board[1][1] == letter) &&
-       (board[2][2] == letter))
-      || ((board [0][2] == letter) && (board[1][1] == letter)
-	  && (board[2][0] == letter))) {
-    return 1;
-  }
+    /* Lidar com alguém ganhando nas colunas. */
+    int i;
+    int j = -1;
+    char column[3];
 
-  return 0; // no one has won yet
+    while (j++ < 3) {
+        for (i=0; i<3; i++) {
+            column[i] = board[i][j];
+        }
+        if (same_letter(column, letter)) {
+            return 1;
+        }
+    }
+
+    /* Lidar com alguém ganhando nas diagonais
+       usando método brute force. */
+    if (((board[0][0] == letter) && (board[1][1] == letter) &&
+            (board[2][2] == letter))
+            || ((board [0][2] == letter) && (board[1][1] == letter)
+                && (board[2][0] == letter))) {
+        return 1;
+    }
+
+    return 0; // Ninguém ganhou ainda.
 }
-      
 
-      
-  
 
-  
+
+
+
+
