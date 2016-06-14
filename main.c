@@ -12,30 +12,30 @@
 #include "move.h"
 #include <time.h>
 
-void ultimos(char** board, int a){
-FILE* arquivo;
-char c [51];
+void ultimos(char** board, int a) {
+    FILE* arquivo;
+    char c [51];
 
-arquivo = fopen("ganhadores.txt", "a");
-printf("Jogador %i, digite seu nome: ", a);
-scanf(" %s", c);
+    arquivo = fopen("ganhadores.txt", "a");
+    printf("Jogador %i, digite seu nome: ", a);
+    scanf(" %s", c);
 
-fprintf(arquivo,"O(a) jogador(a) %s ganhou com a seguinte jogada:\n", c);
-fprintf(arquivo,"\t\t\t ╔═════════════╗                                                    \n");
-fprintf(arquivo,"\t\t\t╔╝             ╚╗                                                   \n");
-fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[0][0], board[0][1], board[0][2]);
-fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                                   \n");
-fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[1][0], board[1][1], board[1][2]);
-fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                                   \n");
-fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[2][0], board[2][1], board[2][2]);
-fprintf(arquivo,"\t\t\t╚╗             ╔╝                                                   \n");
-fprintf(arquivo,"\t\t\t ╚═════════════╝                                                    \n");
+    fprintf(arquivo,"O(a) jogador(a) %s ganhou com a seguinte jogada:\n", c);
+    fprintf(arquivo,"\t\t\t ╔═════════════╗                                                    \n");
+    fprintf(arquivo,"\t\t\t╔╝             ╚╗                                                   \n");
+    fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[0][0], board[0][1], board[0][2]);
+    fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                                   \n");
+    fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[1][0], board[1][1], board[1][2]);
+    fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                                   \n");
+    fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[2][0], board[2][1], board[2][2]);
+    fprintf(arquivo,"\t\t\t╚╗             ╔╝                                                   \n");
+    fprintf(arquivo,"\t\t\t ╚═════════════╝                                                    \n");
 
-fclose(arquivo);
+    fclose(arquivo);
 }
 
-void enter(){
-printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+void enter() {
+    printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
     printf("\t\t\t\t\t\t\t              ║           ║\n");
     printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
     printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
@@ -45,37 +45,37 @@ printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════
     printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
 }
 
-void credit(){
+void credit() {
 
-system("clear");
-printf("\t\t\t\t\t**CRÉDITOS**\n");
-printf("\n\n\tEstrutura Original: sjrand (GitHub: https://github.com/sjrand)\n");
-printf("\tOtimização e modularização: Eduardo Porto e Matheus Balke\n");
-printf("\tDesenvolvido na Pontifícia Universidade do Rio Grande do Sul\n");
-printf("\tSob maestria de Marco Mangan\n");
-printf("\tFinalizado em Junho de 2016\n");
-printf("\n\tPRESSIONE ENTER PARA CONTINUAR\n");
-getchar();
-getchar();
+    system("clear");
+    printf("\t\t\t\t\t**CRÉDITOS**\n");
+    printf("\n\n\tEstrutura Original: sjrand (GitHub: https://github.com/sjrand)\n");
+    printf("\tOtimização e modularização: Eduardo Porto e Matheus Balke\n");
+    printf("\tDesenvolvido na Pontifícia Universidade do Rio Grande do Sul\n");
+    printf("\tSob maestria de Marco Mangan\n");
+    printf("\tFinalizado em Junho de 2016\n");
+    printf("\n\tPRESSIONE ENTER PARA CONTINUAR\n");
+    getchar();
+    getchar();
 
 }
-	
 
 
- void leiaarq(){
-	char n;
-	FILE *arquivo;
-	system("clear");
-	arquivo = fopen("ganhadores.txt", "r");
-	while (!feof(arquivo)) {
-		fscanf(arquivo, "%c", &n);
-		printf("%c", n);
-		
-	}
-	fclose(arquivo);
-	printf("\n\nPRESSIONE ENTER PARA CONTINUAR\n");
-	getchar();
-	getchar();
+
+void leiaarq() {
+    char n;
+    FILE *arquivo;
+    system("clear");
+    arquivo = fopen("ganhadores.txt", "r");
+    while (!feof(arquivo)) {
+        fscanf(arquivo, "%c", &n);
+        printf("%c", n);
+
+    }
+    fclose(arquivo);
+    printf("\n\nPRESSIONE ENTER PARA CONTINUAR\n");
+    getchar();
+    getchar();
 }
 
 
@@ -92,11 +92,11 @@ int letrapranum(char a) {
         b = 3;
         break;
     case '4':
-	b = 4;
-	break;
-	case '5':
-	b = 5;
-	break;
+        b = 4;
+        break;
+    case '5':
+        b = 5;
+        break;
     default:
         b =0;
     }
@@ -120,8 +120,8 @@ void print_usage1()
     printf("\t\t\t\t\t║   Você não tem nem chance de me vencer, mas boa sorte igual...     ║\n");
     printf("\t\t\t\t\t╚╗                                                                  ╔╝\n");
     printf("\t\t\t\t\t ╚══════════════════════════════════════════════════════════════════╝ \n");
-    
-return;
+
+    return;
 }
 void print_usage2() {
     system("clear");
@@ -134,8 +134,8 @@ void print_usage2() {
     printf("\t\t\t\t ║    seguido por 'ENTER' e então o número da coluna (1, 2 ou 3 também).                ║\n");
     printf("\t\t\t\t ╚╗                                                                                    ╔╝\n");
     printf("\t\t\t\t  ╚════════════════════════════════════════════════════════════════════════════════════╝ \n");
-    
-return;
+
+    return;
 }
 
 /* Printa e sai se o jogo der empate */
@@ -211,7 +211,7 @@ void cabecario() {
 
     printf("\n\n\t\t           ██╗ ██████╗  ██████╗  ██████╗     ██████╗  █████╗     ██╗   ██╗███████╗██╗     ██╗  ██╗ █████╗   \n");
     printf("\t\t           ██║██╔═══██╗██╔════╝ ██╔═══██╗    ██╔══██╗██╔══██╗    ██║   ██║██╔════╝██║     ██║  ██║██╔══██╗      \n");
-    printf("\t\t           ██║██║   ██║██║  ███╗██║   ██║    ██║  ██║███████║    ██║   ██║█████╗  ██║     ███████║███████║      \n");  
+    printf("\t\t           ██║██║   ██║██║  ███╗██║   ██║    ██║  ██║███████║    ██║   ██║█████╗  ██║     ███████║███████║      \n");
     printf("\t\t      ██   ██║██║   ██║██║   ██║██║   ██║    ██║  ██║██╔══██║    ╚██╗ ██╔╝██╔══╝  ██║     ██╔══██║██╔══██║      \n");
     printf("\t\t      ╚█████╔╝╚██████╔╝╚██████╔╝╚██████╔╝    ██████╔╝██║  ██║     ╚████╔╝ ███████╗███████╗██║  ██║██║  ██║      \n");
     printf("\t\t       ╚════╝  ╚═════╝  ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝  ╚═╝      ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝  \n\n\n");
@@ -303,26 +303,26 @@ void doisjogadores(char **board) {
     if (someone_wins(board, 'X')) {
         printf("\t\t\t\t\t\t\t\tJogador 1 ganhou!\n");
 
-	enter();
+        enter();
 
         getchar();
-		ultimos(board, 1);
+        ultimos(board, 1);
     } else if (someone_wins(board, 'O'))  {
         printf("\t\t\t\t\t\t\t\tJogador 2 ganhou!\n");
 
-	enter();
+        enter();
 
 
         getchar();
-		ultimos(board, 2);
-    } else{
+        ultimos(board, 2);
+    } else {
         printf("\t\t\t\t\t\t\t\tFoi um empate!\n");
 
-    	enter();
-    	getchar();
-	getchar();
-}
-	
+        enter();
+        getchar();
+        getchar();
+    }
+
 
 }
 
@@ -350,29 +350,29 @@ int main()
         printf("\t\t\t\t\t\t Escolha uma opção de jogo: \n");
         printf("\t\t\t\t\t\t |1- Um jogador\n");
         printf("\t\t\t\t\t\t |2- Dois jogadores\n");
-		printf("\t\t\t\t\t\t |3- Ganhadores Anteriores\n");
-		printf("\t\t\t\t\t\t |4- Créditos\n");
+        printf("\t\t\t\t\t\t |3- Ganhadores Anteriores\n");
+        printf("\t\t\t\t\t\t |4- Créditos\n");
         printf("\t\t\t\t\t\t |5- Sair\n");
         scanf(" %c", &num);
         caso= letrapranum(num);
         switch(caso)
-	 {
+        {
         case 1:
             umjogador(board);
             break;
         case 2:
             doisjogadores(board);
             break;
-	case 3:
-		leiaarq(); 
-		break;        
-	case 4:
+        case 3:
+            leiaarq();
+            break;
+        case 4:
             credit();
             break;
-	case 5:
-			system("clear");
-			exit = 5;
-			break;
+        case 5:
+            system("clear");
+            exit = 5;
+            break;
         default:
             printf("Inválido");
         }

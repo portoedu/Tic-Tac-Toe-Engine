@@ -59,4 +59,4 @@ void print_board(char **board)
     printf("\t\t\t\t\t\t\t\t ╚═════════════╝\n");
     putchar ('\n');
     return;
-}    // Estilo de interface inspirado no TicTacToe de Manuel Gomez. (GitHub: www.github.com/squidbilly9 ) 
+}    // Estilo de interface inspirado no TicTacToe de Manuel Gomez. (GitHub: www.github.com/squidbilly9 )
