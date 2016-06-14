@@ -13,14 +13,11 @@
 #include <time.h>
 
 void ultimos(char** board, int a){
-
 FILE* arquivo;
 char c [51];
-
-arquivo = fopen("arq.txt", "w+");
+arquivo = fopen("ganhadores.txt", "w+");
 printf("Jogador %i, digite seu nome: ", a);
 scanf(" %s", c);
-
 fprintf(arquivo,"O(a) jogador(a) %s ganhou com a seguinte jogada:\n", c);
 fprintf(arquivo,"\t\t\t ╔═════════════╗                                                    \n");
 fprintf(arquivo,"\t\t\t╔╝             ╚╗                                                   \n");
@@ -31,11 +28,37 @@ fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                    
 fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[2][0], board[2][1], board[2][2]);
 fprintf(arquivo,"\t\t\t╚╗             ╔╝                                                   \n");
 fprintf(arquivo,"\t\t\t ╚═════════════╝                                                    \n");
-
 fclose(arquivo);
 
 }
 
+void enter(){
+printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
+    printf("\t\t\t\t\t\t\t              ║           ║\n");
+    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
+    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
+    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
+    printf("\t\t\t\t\t\t\t                 ║        ║\n");
+    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+}
+
+ void leiaarq(){
+	char n;
+	FILE *arquivo;
+	system("clear");
+	arquivo = fopen("ganhadores.txt", "r");
+	while ( ! feof(arquivo)) {
+
+		if (fscanf(arquivo, "%c", &n) == 1){
+		printf("%c", n);
+		}
+	}
+	fclose(arquivo);
+	printf("\n\nPRESSIONE ENTER PARA CONTINUAR");
+	getchar();
+	getchar();
+}
 
 
 int letrapranum(char a) {
@@ -50,17 +73,23 @@ int letrapranum(char a) {
     case '3':
         b = 3;
         break;
+    case '4':
+	b = 4;
+	break;
+	case '5':
+	b = 5;
     default:
         b =0;
     }
+
     return b;
 }
-
 
 void print_usage1()
 {
     system("clear");
     putchar ('\n');
+
     printf("\t\t\t\t\t ╔══════════════════════════════════════════════════════════════════╗ \n");
     printf("\t\t\t\t\t╔╝                                                                  ╚╗\n");
     printf("\t\t\t\t\t║   Então isto é um desafio? Eu contra você?! Você joga com 'O' e    ║\n");
@@ -72,13 +101,13 @@ void print_usage1()
     printf("\t\t\t\t\t║   Você não tem nem chance de me vencer, mas boa sorte igual...     ║\n");
     printf("\t\t\t\t\t╚╗                                                                  ╔╝\n");
     printf("\t\t\t\t\t ╚══════════════════════════════════════════════════════════════════╝ \n");
-
-
-    return;
+    
+return;
 }
 void print_usage2() {
     system("clear");
     putchar ('\n');
+
     printf("\t\t\t\t  ╔════════════════════════════════════════════════════════════════════════════════════╗ \n");
     printf("\t\t\t\t ╔╝                                                                                    ╚╗\n");
     printf("\t\t\t\t ║    O Jogador 1 joga com 'X' e o Jogador 2 joga com 'O'.                              ║\n");
@@ -86,13 +115,13 @@ void print_usage2() {
     printf("\t\t\t\t ║    seguido por 'ENTER' e então o número da coluna (1, 2 ou 3 também).                ║\n");
     printf("\t\t\t\t ╚╗                                                                                    ╔╝\n");
     printf("\t\t\t\t  ╚════════════════════════════════════════════════════════════════════════════════════╝ \n");
-    return;
+    
+return;
 }
+
 /* Printa e sai se o jogo der empate */
 void cats_game()
 {
-
-
     int v;
     srand(time(NULL));
     v = rand() %3 + 1;
@@ -148,14 +177,7 @@ void ai_wins()
     }
 
 
-    printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
-    printf("\t\t\t\t\t\t\t              ║           ║\n");
-    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
-    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
-    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║        ║\n");
-    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+    enter();
 
 
     getchar();
@@ -261,46 +283,25 @@ void doisjogadores(char **board) {
     if (someone_wins(board, 'X')) {
         printf("\t\t\t\t\t\t\t\tJogador 1 ganhou!\n");
 
-printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
-    printf("\t\t\t\t\t\t\t              ║           ║\n");
-    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
-    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
-    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║        ║\n");
-    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+	enter();
 
         getchar();
 		ultimos(board, 1);
     } else if (someone_wins(board, 'O'))  {
         printf("\t\t\t\t\t\t\t\tJogador 2 ganhou!\n");
 
-printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
-    printf("\t\t\t\t\t\t\t              ║           ║\n");
-    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
-    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
-    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║        ║\n");
-    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+	enter();
 
 
         getchar();
 		ultimos(board, 2);
-    } else
+    } else{
         printf("\t\t\t\t\t\t\t\tFoi um empate!\n");
 
-    printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════╗\n");
-    printf("\t\t\t\t\t\t\t              ║           ║\n");
-    printf("\t\t\t\t\t\t\t              ║        ║  ║\n");
-    printf("\t\t\t\t\t\t\tPRESSIONE     ╚══╗     ║  ║    PARA CONTINUAR\n");
-    printf("\t\t\t\t\t\t\t                 ║     ║  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
-    printf("\t\t\t\t\t\t\t                 ║        ║\n");
-    printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
-
-    getchar();
-
+    	enter();
+    	getchar();
+	getchar();
+}
 	
 
 }
@@ -319,7 +320,7 @@ int main()
     }
 
 
-    while (exit != 3) {
+    while (exit != 4) {
         cabecario();
         /* Inicia o jogo printando as instruções de uso e inicializando o tabuleiro */
 
@@ -329,19 +330,28 @@ int main()
         printf("\t\t\t\t\t\t Escolha uma opção de jogo: \n");
         printf("\t\t\t\t\t\t |1- Um jogador\n");
         printf("\t\t\t\t\t\t |2- Dois jogadores\n");
-        printf("\t\t\t\t\t\t |3- Sair\n");
+		printf("\t\t\t\t\t\t |3- Ganhadores Anteriores\n");
+		printf("\t\t\t\t\t\t |4- Créditos\n");
+        printf("\t\t\t\t\t\t |5- Sair\n");
         scanf(" %c", &num);
         caso= letrapranum(num);
-        switch(caso) {
+        switch(caso)
+	 {
         case 1:
             umjogador(board);
             break;
         case 2:
             doisjogadores(board);
             break;
-        case 3:
-            exit = 3;
+	case 3:
+		leiaarq(); 
+		break;        
+	case 4:
+            exit = 4;
             break;
+	case 5:
+			credit();
+			break;
         default:
             printf("Inválido");
         }
