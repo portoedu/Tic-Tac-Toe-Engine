@@ -12,12 +12,12 @@
 #include <time.h>
 
 int letrapranum(char a){
-int b=0;
+int b;
 switch (a){
 case '1': b = 1; break;
 case '2': b = 2; break;
 case '3': b = 3; break;
-default: printf("Inválido");
+default: printf("Inválido"); b =0;
 }
 return b;
 }
@@ -133,14 +133,17 @@ printf("\t\t       ╚════╝  ╚═════╝  ╚═════
 
 int jogada(char** board, char a){
 		int hor, vert;
+		char hc, vc;
 		printf("Digite a linha: ");
-        scanf("%i", &hor);
+        scanf(" %c", &hc);
+		hor = letrapranum(hc);
 		hor -= 1;
 		if(hor < 0 || hor > 2){
 			printf("\nLinha inserida é invalida!\n");}
 		else {
 			printf("Digite a coluna: ");
-			scanf("%i", &vert);
+			scanf(" %c", &vc);
+			vert = letrapranum(vc);
 		    vert -= 1;
 		    if ((vert > 2) || (vert < 0)){
 		        printf("Ops, esta coluna é inválida.\n");
