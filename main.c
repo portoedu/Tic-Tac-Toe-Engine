@@ -17,7 +17,7 @@ switch (a){
 case '1': b = 1; break;
 case '2': b = 2; break;
 case '3': b = 3; break;
-default: printf("Inválido"); b =0;
+default: b =0;
 }
 return b;
 }
@@ -146,9 +146,9 @@ int jogada(char** board, char a){
 			vert = letrapranum(vc);
 		    vert -= 1;
 		    if ((vert > 2) || (vert < 0)){
-		        printf("Ops, esta coluna é inválida.\n");
+		        printf("\nOps, esta coluna é inválida.\n");
 		    } else if (board[hor][vert] != '-') {
-		        printf("Opa, este lugar já está ocupado!\n");
+		        printf("\nOpa, este lugar já está ocupado!\n");
 		    } else {
 				update_board(board, hor, vert, a);
 				return 1;
@@ -281,6 +281,7 @@ int main()
 	case 3:	
 			exit = 3;
 			break;	
+	default: printf("Inválido");
 	}
 	}
 
