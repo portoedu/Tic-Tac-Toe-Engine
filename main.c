@@ -142,7 +142,7 @@ return;
 void cats_game()
 {
     int v;
-    srand(time(NULL));
+    srand(time(NULL));    // Estilo de randomização retirado do livro "C: Como Programar", DEITEL
     v = rand() %3 + 1;
 
     switch(v) {
@@ -166,7 +166,8 @@ void cats_game()
     printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
 
     getchar();
-    getchar();
+    getchar(); // Operações com char e string consultadas no livro "Linguagem C", DAMAS, Luís
+
 
 }
 
@@ -209,12 +210,12 @@ void cabecario() {
     system("clear");
 
     printf("\n\n\t\t           ██╗ ██████╗  ██████╗  ██████╗     ██████╗  █████╗     ██╗   ██╗███████╗██╗     ██╗  ██╗ █████╗   \n");
-    printf("\t\t           ██║██╔═══██╗██╔════╝ ██╔═══██╗    ██╔══██╗██╔══██╗    ██║   ██║██╔════╝██║     ██║  ██║██╔══██╗  \n");
-    printf("\t\t           ██║██║   ██║██║  ███╗██║   ██║    ██║  ██║███████║    ██║   ██║█████╗  ██║     ███████║███████║  \n");
-    printf("\t\t      ██   ██║██║   ██║██║   ██║██║   ██║    ██║  ██║██╔══██║    ╚██╗ ██╔╝██╔══╝  ██║     ██╔══██║██╔══██║  \n");
-    printf("\t\t      ╚█████╔╝╚██████╔╝╚██████╔╝╚██████╔╝    ██████╔╝██║  ██║     ╚████╔╝ ███████╗███████╗██║  ██║██║  ██║  \n");
+    printf("\t\t           ██║██╔═══██╗██╔════╝ ██╔═══██╗    ██╔══██╗██╔══██╗    ██║   ██║██╔════╝██║     ██║  ██║██╔══██╗      \n");
+    printf("\t\t           ██║██║   ██║██║  ███╗██║   ██║    ██║  ██║███████║    ██║   ██║█████╗  ██║     ███████║███████║      \n");  
+    printf("\t\t      ██   ██║██║   ██║██║   ██║██║   ██║    ██║  ██║██╔══██║    ╚██╗ ██╔╝██╔══╝  ██║     ██╔══██║██╔══██║      \n");
+    printf("\t\t      ╚█████╔╝╚██████╔╝╚██████╔╝╚██████╔╝    ██████╔╝██║  ██║     ╚████╔╝ ███████╗███████╗██║  ██║██║  ██║      \n");
     printf("\t\t       ╚════╝  ╚═════╝  ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝  ╚═╝      ╚═══╝  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝  \n\n\n");
-}
+}  // Arte em ASCII produzida pelo aplicativo TAAG. Disponível em: http://www.patorjk.com/software/taag/
 
 int jogada(char** board, char a) {
     int hor, vert;
