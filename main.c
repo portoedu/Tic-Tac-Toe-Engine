@@ -28,8 +28,8 @@ fprintf(arquivo,"\t\t\t║  ---+---+---  ║                                    
 fprintf(arquivo,"\t\t\t║  %2c |%2c |%2c   ║         \n", board[2][0], board[2][1], board[2][2]);
 fprintf(arquivo,"\t\t\t╚╗             ╔╝                                                   \n");
 fprintf(arquivo,"\t\t\t ╚═════════════╝                                                    \n");
-fclose(arquivo);
 
+fclose(arquivo);
 }
 
 void enter(){
@@ -41,6 +41,12 @@ printf("\n\n\n\n\t\t\t\t\t\t\t              ╔═══════════
     printf("\t\t\t\t\t\t\t                 ║  ◄══╝  ║\n");
     printf("\t\t\t\t\t\t\t                 ║        ║\n");
     printf("\t\t\t\t\t\t\t                 ╚════════╝\n");
+}
+
+void credit(){
+	
+
+
 }
 
  void leiaarq(){
@@ -320,7 +326,7 @@ int main()
     }
 
 
-    while (exit != 4) {
+    while (exit != 5) {
         cabecario();
         /* Inicia o jogo printando as instruções de uso e inicializando o tabuleiro */
 
@@ -347,10 +353,10 @@ int main()
 		leiaarq(); 
 		break;        
 	case 4:
-            exit = 4;
+            credit();
             break;
 	case 5:
-			credit();
+			exit = 5;
 			break;
         default:
             printf("Inválido");
@@ -359,6 +365,3 @@ int main()
 
     return 0; // Controle nunca deve chegar aqui
 }
-
-
-
